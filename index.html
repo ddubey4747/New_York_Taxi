@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxi Route Finder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 50%;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label, input {
+            margin: 5px 0;
+        }
+        input[type="text"], input[type="datetime-local"] {
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px;
+            font-size: 1em;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Find Taxi Route</h1>
+        <form action="/route" method="post">
+            <label for="pickup_datetime">Pickup Datetime:</label>
+            <input type="datetime-local" id="pickup_datetime" name="pickup_datetime" required>
+            <label for="pickup_longitude">Pickup Longitude:</label>
+            <input type="text" id="pickup_longitude" name="pickup_longitude" required>
+            <label for="pickup_latitude">Pickup Latitude:</label>
+            <input type="text" id="pickup_latitude" name="pickup_latitude" required>
+            <label for="dropoff_longitude">Dropoff Longitude:</label>
+            <input type="text" id="dropoff_longitude" name="dropoff_longitude" required>
+            <label for="dropoff_latitude">Dropoff Latitude:</label>
+            <input type="text" id="dropoff_latitude" name="dropoff_latitude" required>
+            <label for="passenger_count">Passenger Count:</label>
+            <input type="text" id="passenger_count" name="passenger_count" required>
+            <button type="submit">Show Route</button>
+        </form>
+    </div>
+</body>
+</html>
